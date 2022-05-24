@@ -1,0 +1,41 @@
+﻿@model IEnumerable<MSCloudView.Models.Athlete>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AthleteName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdCountryNavigation.CountryName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AthleteName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdCountryNavigation.CountryName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdAthlete">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdAthlete">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdAthlete">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

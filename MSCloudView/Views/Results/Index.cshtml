@@ -1,0 +1,53 @@
+﻿@model IEnumerable<MSCloudView.Models.Result>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ArranqueKg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EnvionKg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalPesoKg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdAthleteNavigation.AthleteName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ArranqueKg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EnvionKg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalPesoKg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdAthleteNavigation.AthleteName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdResult">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdResult">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdResult">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,50 @@
+﻿@model IEnumerable<MSCloudView.Models.MainBoard>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CountryCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AthleteName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ArranqueKg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EnvionKg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalPesoKg)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CountryCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AthleteName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ArranqueKg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EnvionKg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalPesoKg)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>

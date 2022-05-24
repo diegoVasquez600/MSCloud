@@ -1,0 +1,49 @@
+﻿@model MSCloudView.Models.Result
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Result</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdResult" />
+            <div class="form-group">
+                <label asp-for="IdAthlete" class="control-label">Athlete</label>
+                <select asp-for="IdAthlete" class="form-control" asp-items="ViewBag.IdAthlete"></select>
+                <span asp-validation-for="IdAthlete" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ArranqueKg" class="control-label"></label>
+                <input asp-for="ArranqueKg" class="form-control" />
+                <span asp-validation-for="ArranqueKg" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EnvionKg" class="control-label"></label>
+                <input asp-for="EnvionKg" class="form-control" />
+                <span asp-validation-for="EnvionKg" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalPesoKg" class="control-label"></label>
+                <input asp-for="TotalPesoKg" class="form-control" />
+                <span asp-validation-for="TotalPesoKg" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
